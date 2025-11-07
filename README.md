@@ -9,14 +9,14 @@ keys or conditional steps in your CI/CD pipeline.
 ## Inputs
 
 | Name          | Description                                                                                                  | Required | Default        |
-|---------------|--------------------------------------------------------------------------------------------------------------|----------|----------------|
+| ------------- | ------------------------------------------------------------------------------------------------------------ | -------- | -------------- |
 | ignore-files  | List of files containing patterns to exclude from the hash generation. Each pattern should be on a new line. | false    | .dockerignore  |
 | exclude-paths | List of additional path patterns to exclude from the hash generation. Each path should be on a new line.     | false    | (empty string) |
 
 ## Outputs
 
 | Name       | Description                                      |
-|------------|--------------------------------------------------|
+| ---------- | ------------------------------------------------ |
 | hash       | The generated hash based on Docker source files. |
 | file-list  | List of files considered for hash generation.    |
 | file-count | Number of files considered for hash generation.  |
@@ -25,7 +25,7 @@ keys or conditional steps in your CI/CD pipeline.
 
 ```yaml
 name: Build Docker Image
-on: [ push ]
+on: [push]
 
 jobs:
   build:

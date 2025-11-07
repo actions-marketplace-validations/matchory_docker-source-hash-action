@@ -9,7 +9,7 @@ export async function run() {
 
     // Load ignore patterns from specified ignore files
     const ignoreFilePaths = core.getMultilineInput("ignore-files", {trimWhitespace: true});
-    const ignoreFiles = await Promise.all(ignoreFilePaths.map(path => readFile(path, "utf-8"));
+    const ignoreFiles = await Promise.all(ignoreFilePaths.map(path => readFile(path, "utf-8")));
     ignoreFiles.forEach((content) => ignore.add(content));
 
     // Add additional ignore patterns from input
