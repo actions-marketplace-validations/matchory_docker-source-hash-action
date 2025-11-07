@@ -1,0 +1,49 @@
+{
+  "author": {
+    "name": "Moritz Mazetti",
+    "email": "moritz@matchory.com"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.1",
+    "@balena/dockerignore": "^1.0.2"
+  },
+  "description": "A GitHub Action to compute a hash of the Docker build context, ignoring files as per .dockerignore",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "rollup": "^4.52.5"
+  },
+  "homepage": "https://github.com/matchory/docker-source-hash-action",
+  "keywords": [
+    "github",
+    "action",
+    "docker",
+    "hash",
+    "source"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "docker-source-hash-action",
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matchory/docker-source-hash-action.git"
+  },
+  "scripts": {
+      "postversion": "npm run all",
+    "format:write": "npx prettier --write .",
+    "format:check": "npx prettier --check .",
+    "format": "npm run format:write",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "npm run package",
+    "package": "npx rollup --config rollup.config.js",
+    "all": "npm run format:write && npm run bundle"
+  },
+  "type": "module"
+}

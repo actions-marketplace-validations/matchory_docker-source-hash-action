@@ -1,0 +1,28 @@
+name: Docker Source Hash
+description: Create a hash based on Docker source files to determine if a rebuild is necessary.
+branding:
+  color: blue
+  icon: eye-off
+author: Matchory GmbH
+
+inputs:
+  ignore-files:
+    description: "List of files containing patterns to exclude from the hash generation. Each pattern should be on a new line."
+    required: false
+    default: ".dockerignore"
+  exclude-paths:
+    description: "List of additional path patterns to exclude from the hash generation. Each path should be on a new line."
+    required: false
+    default: ""
+
+outputs:
+  hash:
+    description: The generated hash based on Docker source files.
+  file-list:
+    description: List of files considered for hash generation.
+  file-count:
+    description: Number of files considered for hash generation.
+
+runs:
+  using: node24
+  main: dist/index.js
